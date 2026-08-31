@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yojana Setu | Scheme Discovery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- User Header -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div id="user-hub" class="user-hub" style="display:none">
+                <span id="user-display-id">ID: #0000</span>
+                <button onclick="app.showHistory()" class="btn-history"><i data-lucide="history"></i> History</button>
+            </div>
+            <div class="brand" onclick="location.reload()">
+                <i data-lucide="landmark"></i> <span>Yojana Setu</span>
+            </div>
+            <select class="lang-picker" onchange="app.setLang(this.value)">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+            </select>
+        </div>
+    </nav>
+
+    <div id="app-container" class="container"></div>
+
+    <!-- OTP POPUP MODAL -->
+    <div id="otp-modal" class="modal-overlay" style="display:none">
+        <div class="modal-card">
+            <h3>Verify OTP</h3>
+            <p>Enter the 4-digit code sent to your phone</p>
+            <input type="text" id="otp-input" placeholder="0 0 0 0" maxlength="4" class="otp-field">
+            <button class="btn-primary" onclick="app.verifyOtp()">Verify & Login</button>
+            <button class="btn-text" onclick="app.closeOtp()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
